@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+## Shopping Cart
+This is a simple e-commerce web application that allows users to browse and purchase products. The application includes a homepage that displays a list of products, a cart page that shows the items in the user's cart, and a header that includes a search bar and a dropdown for the cart.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting Started
+To run the application locally, clone the repository and run the following commands:
 
-## Available Scripts
+## Copy code
+npm install
+npm start
+The application should now be running on http://localhost:3000
 
-In the project directory, you can run:
+## Components
+The application is composed of several components:
 
-### `npm start`
+## Home
+The Home component displays a list of products. It imports a context called "CartState" which holds the state of the products and other related values like byStock, byFastDelivery, sort, byRating, and searchQuery. The component has a function "transformProducts" which sorts and filters the products based on the values in the context and returns the filtered products. Finally, it renders a component "Filters" and maps through the filtered products, rendering a component "SingleProduct" for each product with the product's data passed as a prop.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Cart
+The Cart component displays the items in the cart and allows the user to modify the quantity and remove items from the cart. It uses the hooks useEffect and useState to calculate the total of the cart items and update it when the cart is changed. It maps through the cart items and renders each item with its name, price, image, rating and a select element to change the quantity, and a delete button to remove the item from the cart. Finally, it renders a summary of the cart with the total amount and buttons to continue shopping or proceed to checkout.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Filters
+The Filters component allows users to filter and sort the products displayed in the Home component. It has checkboxes, radio buttons, and a rating component that allow the user to filter and sort the products. It also has a button that allows the user to clear all the filters. When a form element is changed, it dispatches an action to the context with the corresponding type and payload to update the state accordingly.
 
-### `npm test`
+## Header
+The Header component renders a navigation bar at the top of the page. It has a search bar that allows the user to filter products and a dropdown that allows the user to view the items in the cart and remove them. The dropdown will show the items in the cart and a "Go to Cart" button that links to the Cart page. If the cart is empty, it will display the message "Cart is Empty". When the search bar value is changed, it dispatches an action to the context with the corresponding type and payload to update the state accordingly.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Context
+The application uses a single context called "CartState" to store the state of the products, cart, and filters. The context includes a state object and a dispatch function that allows the components to update the state.
 
-### `npm run build`
+## Note
+This is a simple prototype and is not intended fully implemented for production use yet. Some of the features may not be working properly and there may be bugs present.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thanks
