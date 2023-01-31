@@ -1,6 +1,12 @@
 ## Shopping Cart
 This is a simple e-commerce web application that allows users to browse and purchase products. The application includes a homepage that displays a list of products, a cart page that shows the items in the user's cart, and a header that includes a search bar and a dropdown for the cart.
 
+
+
+https://user-images.githubusercontent.com/91097033/215817819-0b8bf38a-82bb-4a55-b694-52a1dcd24235.mp4
+
+
+
 ## Getting Started
 To run the application locally, clone the repository and run the following commands:
 
